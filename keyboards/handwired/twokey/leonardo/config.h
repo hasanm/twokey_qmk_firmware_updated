@@ -18,16 +18,20 @@
 
 
 
-/* key matrix size */
-#define MATRIX_ROWS 1
-#define MATRIX_COLS 2
-
-#define DIODE_DIRECTION COL2ROW
-
-#define DEBOUNCE    5
-
+// Red is the common/ground
+// White 1 pin
+// Yellow other pin
 
 #define MATRIX_COL_PINS { D6, B5}
 #define MATRIX_ROW_PINS { D1}
+#define UNUSED_PINS
 
+#undef DIODE_DIRECTION
+#define DIODE_DIRECTION ROW2COL
+
+/* #define BACKLIGHT_PIN B6
+   #define BACKLIGHT_BREATHING */
+
+#undef DEBOUNCE
+#define DEBOUNCE 10
 
