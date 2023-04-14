@@ -1,3 +1,3 @@
-# Pro Micro onekey
+# Leonardo Two Key
 
-To trigger keypress, short together pins *F4* and *F5* (marked on the PCB as *A3* and *A2*).
+It has a dedicated reset key on my board
