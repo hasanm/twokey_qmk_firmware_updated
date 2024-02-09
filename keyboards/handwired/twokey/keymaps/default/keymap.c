@@ -8,9 +8,18 @@ enum custom_keycodes {
   MY_URL
 };
 
+
+enum {
+    TD_AC_AV
+};
+
+
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_AC_AV] = ACTION_TAP_DANCE_DOUBLE(LALT(KC_C), LALT(KC_V))
+};
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_ortho_1x2(KC_MS_BTN1, LT(1,KC_MS_BTN2)),
-    [1] = LAYOUT_ortho_1x2(MY_KEY, KC_TRNS),
+    [1] = LAYOUT_ortho_1x2(TD(TD_AC_AV), KC_TRNS),
     [2] = LAYOUT_ortho_1x2(KC_TRNS, KC_TRNS)
 };
 
