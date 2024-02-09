@@ -3,34 +3,14 @@
 #include QMK_KEYBOARD_H
 
 
-const uint16_t PROGMEM both_combo[] = {KC_MS_BTN1, KC_MS_BTN2, COMBO_END};
-
-combo_t key_combos[COMBO_COUNT] = {
-    COMBO(both_combo, C(KC_V))
-};
-
-
-enum {
-    TD_MY_COPY,
-};
-
-tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_MY_COPY] = ACTION_TAP_DANCE_DOUBLE(C(KC_C), C(KC_V)),
-};
-
-
 enum custom_keycodes {
   MY_KEY = SAFE_RANGE,
   MY_URL
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  // LAYOUT_ortho_1x2(KC_GRV, MY_KEY)
-  // LAYOUT_ortho_1x2(KC_MS_BTN2, MY_KEY)
-    // [0] = LAYOUT_ortho_1x2(KC_MS_BTN1, KC_LALT),
     [0] = LAYOUT_ortho_1x2(KC_MS_BTN1, LT(1,KC_MS_BTN2)),
-    [1] = LAYOUT_ortho_1x2(TD_MY_COPY, KC_TRNS),
+    [1] = LAYOUT_ortho_1x2(MY_KEY, KC_TRNS),
     [2] = LAYOUT_ortho_1x2(KC_TRNS, KC_TRNS)
 };
 
